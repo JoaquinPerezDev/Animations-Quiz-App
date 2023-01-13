@@ -1,10 +1,17 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+
 </script>
 
 <template>
-  <RouterView />
+  <header class="header-container">
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/about">About</RouterLink>
+  </header>
+  <transition name="route">
+    <RouterView />
+  </transition>
+
 </template>
 
 <style scoped>
@@ -18,30 +25,6 @@ header {
   margin: 0 auto 2rem;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
 
 @media (min-width: 1024px) {
   header {
@@ -69,4 +52,30 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
+
+.header-container {
+  max-width: 300px;
+  margin: 10px auto;
+}
+
+.header-container a{
+  margin-right: 5px;
+}
+
+.route-enter-from {
+  opacity: 0;
+  transform: translateX(100px);
+
+}
+
+.route-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.route-enter-active {
+  transition: all 0.4s ease;
+}
+
+
 </style>

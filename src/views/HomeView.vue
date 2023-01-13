@@ -131,7 +131,7 @@ li {
 }
 
 .invitees-enter-active {
-  transition: all 0.5 ease;
+  transition: all 0.5 ease-in;
 }
 
 .invitees-leave-from {
@@ -145,6 +145,10 @@ li {
 }
 
 .invitees-leave-active {
-  transition: all 0.5 ease;
+  transition: all 0.5 ease-out;
+}
+
+.invitees-move {
+  transition: all 0.5s ease;
 }
 </style>
