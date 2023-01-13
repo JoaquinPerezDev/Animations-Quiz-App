@@ -31,11 +31,11 @@
       v-model="nameInput"
       @keypress.enter="addInvitee"
     >
-    <ul>
+    <TransitionGroup name="invitees">
       <li v-for="name in names" :key="name">
         {{ name }}
       </li>
-    </ul>
+    </TransitionGroup>
   </div>
   
   </main>
@@ -109,5 +109,20 @@ li {
   box-shadow: 1px 1px 10px black;
   text-align: center;
   cursor: pointer;
+}
+
+
+.invitees-enter-from {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.invitees-enter-to {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.invitees-enter-active {
+  transition: all 0.5 ease;
 }
 </style>
