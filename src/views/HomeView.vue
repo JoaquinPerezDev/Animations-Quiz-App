@@ -8,6 +8,10 @@
     names.value.unshift(nameInput.value)
     nameInput.value = ''
   }
+
+  const removeInvitee = (name) => {
+    names.value = names.value.filter(n => n !== name)
+  }
 </script>
 
 <template>
@@ -32,7 +36,11 @@
       @keypress.enter="addInvitee"
     >
     <TransitionGroup name="invitees">
-      <li v-for="name in names" :key="name">
+      <li 
+        v-for="name in names" 
+        :key="name"
+        @click="removeInvitee(name)"
+        >
         {{ name }}
       </li>
     </TransitionGroup>
@@ -123,6 +131,20 @@ li {
 }
 
 .invitees-enter-active {
+  transition: all 0.5 ease;
+}
+
+.invitees-leave-from {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.invitees-leave-to {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.invitees-leave-active {
   transition: all 0.5 ease;
 }
 </style>
