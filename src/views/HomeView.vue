@@ -51,41 +51,6 @@
 </template>
 
 <style scoped>
-/*
-.fade-enter-from {
-  opacity: 0;
-}
-.fade-enter-to {
-  opacity: 1;
-}
-
-.fade-enter-active {
-  transition: all 1s ease;
-}
-
-.fade-leave-from {
-  opacity: 1;
-}
-.fade-leave-to {
-  opacity: 0;
-}
-
-.fade-leave-active {
-  transition: all 1s ease;
-}
-
-.container {
-  position: relative;
-}
-
-h1 {
-  position: absolute;
-}
-
-button {
-  margin-top: 50px;
-}
-*/
 
 .container {
   max-width: 300px;
@@ -146,6 +111,7 @@ li {
 
 .invitees-leave-active {
   transition: all 0.5 ease-out;
+  position: absolute;
 }
 
 .invitees-move {
